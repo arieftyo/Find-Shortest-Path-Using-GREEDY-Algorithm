@@ -48,29 +48,32 @@ heuristics = {
     "Sakai"          : 374
 }
 
-def createPrint(s):
+def createPrint(origin, dest):
          temp = []
-         while s != "Tokyo":
-            temp.append(s)
-            s = tjn[s]
+         while dest != origin:
+            temp.append(dest)
+            dest = tjn[dest]
             print(temp)
-z = []
-heapq.heapify(z)
+            
+def greedy(origin, dest):
+    print(origin)
+    z = []
+    heapq.heapify(z)
+    heapq.heappush(z,[heuristics[origin], origin])
+    dst[origin] = 0
+    while z:
+        now = heapq.heappop(z)
+        if now[1] == dest:
+            break
+        for n in grp[now[1]]:
+            if n[0] not in dst or dst[n[0]] > dst[now[1]] + n[1]: 
+                print(dst[now[1]]+n[1])
+                heapq.heappush(z,[heuristics[n[0]],n[0]])
+                dst[n[0]] = dst[now[1]] + n[1]
+                tjn[n[0]] = now[1]          
+    createPrint(origin,dest)
+    print("\n")
 
-heapq.heappush(z,[heuristics["Tokyo"], "Tokyo"])
-dst["Tokyo"] = 0
+greedy("Tokyo", "Osaka")
+greedy("Fuji", "Osaka")
 
-while z:
-    now = heapq.heappop(z)
-    if now[1] == "Osaka":
-        break
-    for n in grp[now[1]]:
-        if n[0] not in dst or dst[n[0]] > dst[now[1]] + n[1]: 
-            print(dst[now[1]]+n[1])
-            heapq.heappush(z,[heuristics[n[0]],n[0]])
-            dst[n[0]] = dst[now[1]] + n[1]
-            tjn[n[0]] = now[1]          
-
-print(dst["Osaka"])
-s = "Osaka"
-createPrint(s)
