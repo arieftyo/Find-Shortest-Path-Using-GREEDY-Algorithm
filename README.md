@@ -39,20 +39,26 @@ Once upon a time, Yudhis and Tyo want to take a vacation in Osaka City, but they
 # Step: 
 
 ![first_step](/first_step.JPG)
+
 •	We use the heap-queue library to store heuristic values and are sorted from small to large.
 •	The first step, we save the graph in the form of an adjacency list, which is by storing neighboring nodes with how much cost or distance needed to go to the neighboring node into the list.
  
 ![first_step](/second_step.JPG)
+
 •	The second step, we store the heuristics values, that is straight line distance between from origin city to destination city.
  
 ![first_step](/third_step.JPG)
+
 •	Then we make a greedy function with parameter origin city and destination city, to compare the heuristic values of each neighbor to the destination city, then we sum up and print the costs every time we move to a neighboring city and the function is complete if it has arrived at the destination city.
 
 ![first_step](/fourth_step.JPG)
+
 •	Last, we make a function that prints the route from the city of origin to the city of destination.
 
 •	Then we can test the program
+
 ![first_step](/test.JPG)
 
 •	And The results is..
+
 ![first_step](/result.JPG)
