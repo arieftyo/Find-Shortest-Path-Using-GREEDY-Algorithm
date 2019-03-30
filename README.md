@@ -2,7 +2,7 @@
 
 Full code : [Code](/Shortest_path_Greedy.py)
 
-Find Shortest Path With Greedy Algorithm
+## Find Shortest Path With Greedy Algorithm
 
 ![Graph](/picture_graph.png)
 
