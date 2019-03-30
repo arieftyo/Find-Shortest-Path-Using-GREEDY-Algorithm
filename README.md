@@ -37,6 +37,8 @@ Once upon a time, Yudhis and Tyo want to take a vacation in Osaka City, but they
 
 
 Step: 
+
+![first_step](/first step.jpg)
 •	We use the heap-queue library to store heuristic values and are sorted from small to large.
 •	The first step, we save the graph in the form of an adjacency list, which is by storing neighboring nodes with how much cost or distance needed to go to the neighboring node into the list.
  
